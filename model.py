@@ -16,7 +16,7 @@ import faiss
 from sentence_transformers import SentenceTransformer
 import time
 
-file_path = '/content/Data/myscheme_schemes_data_FINAL.json'
+file_path = '/content/Data/Data.json'
 embedding_model_name = 'sentence-transformers/all-MiniLM-L6-v2' # Small & efficient model
 k_results = 5 # Number of results to retrieve for a query
 

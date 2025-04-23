@@ -19,9 +19,9 @@ import time
 print("--- Initializing Scheme Retrieval App in Colab ---")
 
 # --- Configuration ---
-# IMPORTANT: Upload 'myscheme_schemes_data_FINAL.json' to your Colab session first!
+# IMPORTANT: Upload 'Data.json' to your Colab session first!
 # This path assumes it's uploaded to the root /content/ directory.
-file_path = '/content/Data/myscheme_schemes_data_FINAL.json'
+file_path = '/content/Data/Data.json'
 embedding_model_name = 'sentence-transformers/all-MiniLM-L6-v2'
 k_results_app = 5
 
