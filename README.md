@@ -1,2 +1,9 @@
-# scheme-qna-project
- This project aims to make information about Indian government schemes more accessible to citizens. It features a Question Answering system where you can ask questions in plain English (like "What help is available for farmers?" or "Schemes for student scholarships?") and get relevant scheme information in return. The system works by first automatically collecting data about schemes using a web scraper. It then uses an AI technique called Retrieval-Augmented Generation (RAG), powered by sentence embeddings (using all-MiniLM-L6-v2) and efficient FAISS similarity search, to find and rank the schemes that best match your query from the collected data. An interactive demo built with Gradio is included to easily try out the system.
+Here’s the basic flow of how this project gets scheme_qna:
+
+1.Get the Data: First, we need info about the schemes. You can run the scraper script scraper.py, or just use the `Data.json` file already included in data folder.
+2.Understand the Schemes When you start the app (`model+app.py`), it reads the scheme data. It then uses an AI model (`all-MiniLM-L6-v2`) to figure out the meaning of the text for each scheme (like its description, who it's for, benefits, etc.). It turns this understanding into a list of numbers called an "embedding".
+3.Create a Search Index:All these embeddings are organized into a special search index using FAISS. This lets the app quickly find schemes with similar meanings later on.
+4.Ask a Question: You type your question into the Gradio app.
+5.Understand the Question: The same AI model reads your question and creates an embedding for it, too.
+6.Find Matches: The app uses your question's embedding to search the FAISS index for the scheme embeddings that are the closest match in meaning.
+7.Show Results: The app looks up the details for the best-matching schemes and displays them for you.
